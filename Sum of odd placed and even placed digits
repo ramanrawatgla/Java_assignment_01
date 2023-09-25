@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class SumOfOddEvenDigits {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Take N as input
+        int N = scanner.nextInt();
+
+        // Initialize the sum of odd and even placed digits
+        int oddSum = 0;
+        int evenSum = 0;
+
+        // Iterate over the digits of N
+        int i = 0;
+        while (N > 0) {
+            // Get the last digit of N
+            int digit = N % 10;
+
+            // Add the digit to the sum of odd or even placed digits
+            if (i % 2 == 0) {
+                oddSum += digit;
+            } else {
+                evenSum += digit;
+            }
+
+            // Remove the last digit from N
+            N /= 10;
+
+            // Increment the counter
+            i++;
+        }
+
+        // Print the sum of odd and even placed digits
+        System.out.println("Sum of odd placed digits: " + oddSum);
+        System.out.println("Sum of even placed digits: " + evenSum);
+    }
+}
